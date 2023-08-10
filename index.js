@@ -70,7 +70,11 @@ client.on('message', async message => {
 
     if (targetUser) {
       try {
-        await targetUser.send('You have been infected by bread! Do NOT change your status for a week.');
+        await targetUser.send(`You have been infected.
+
+i have changed your status to “DM me the word "bread" "
+
+The infection shall spread silently. The only rule is to not spoil the game for others by telling people what saying bread does. Gotta keep the status for a week. Welcome to the new epidemic, my boy. You are the ${ordinal} member to be infected by bread. We're still trying to find the cure.`);
         message.reply(`Successfully infected ${targetUser.tag} with the bread infection.`);
       } catch (error) {
         console.error(`Failed to infect ${targetUser.tag}: ${error}`);
@@ -85,7 +89,7 @@ client.on('message', async message => {
   } else if (message.content.startsWith('/about')) {
     const embed = new Discord.MessageEmbed()
       .setTitle('About BreadBot')
-      .setDescription('BreadBot is a fun bot that infects people with the bread! 🍞')
+      .setDescription('BreadBot is a fun bot that infects people with bread! 🍞')
       .addField('Creator', 'imyeb (elishere404)')
       .addField('Version', '1.0.0')
       .setImage('https://media.tenor.com/jM34V0MnmkwAAAAC/fast-spinning-beget-bread.gif')
